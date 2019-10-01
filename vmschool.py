@@ -5,11 +5,11 @@
 import webbrowser as web
 
 print("Hi, welcome to the Vending Machine!")
-print("1. Water: $2.00 Stock: 10")
-print("2. Vitamin Water: $3.00 Stock: 8")
-print("3. Granola Bar: $1.40 Stck: 20")
-print("4. Creatine: $0.50 per gram Stock: 1000 grams")
-print("5. Healthy Snackz $3.00 Stock: 20 bags")
+print("1. Water: $2.00 --------------- Stock: 10 bottles")
+print("2. Vitamin Water: $3.00 ------- Stock: 8 bottles")
+print("3. Granola Bar: $1.40 --------- Stock: 20 bars")
+print("4. Creatine: $0.50 per gram --- Stock: 1000 grams")
+print("5. Healthy Snackz $3.00  ------ Stock: 20 bags")
 print(" ")
 
 
