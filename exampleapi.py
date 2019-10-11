@@ -9,8 +9,8 @@ import pprint
 
 def writeHTML(data):
 	myfile = open("exampleapi.html","w")
-	myfile.write("<h1>JSON file returned by API call</h1>")
-	myfile.write("<p>Copy and paste to <a href='jsonprettyprint.com'>JSON editor</a> for pretty format.</p>")
+	myfile.write("<h1>CryptoCurrencies Information API </h1>")
+	myfile.write("<p>Copy and paste to <a href='https://jsonprettyprint.com'>JSON editor</a> for pretty format.</p>")
 	myfile.write(data)
 	myfile.close()
 
@@ -20,6 +20,8 @@ def main():
 	if (response.status_code == 200):
 
 		data = response.content
+		data_as_str = data.decode()
+		writeHTML(data_as_str)
 		datajson = response.json()
 		dataPoints = datajson['cryptocurrenciesList']
 		pprint.pprint(datajson)
