@@ -9,13 +9,13 @@ import pprint
 
 def writeHTML(data):
 	myfile = open("autre.html","w")
-	myfile.write("<h1>CryptoCurrencies Information API </h1>")
+	myfile.write("<h1>Air Quality API</h1>")
 	myfile.write("<p>Copy and paste to <a href='https://jsonprettyprint.com'>JSON editor</a> for pretty format.</p>")
 	myfile.write(data)
 	myfile.close()
 
 def main():
-	response = requests.get("https://gnews.io/api/v3/topics/sports?token=ecefef12cbb0cc5ec58073fc7c157829")
+	response = requests.get("http://api.airvisual.com/v2/nearest_city?key=f0213f5e-54c4-4605-b743-6e616656d762")
 	
 	if (response.status_code == 200):
 
