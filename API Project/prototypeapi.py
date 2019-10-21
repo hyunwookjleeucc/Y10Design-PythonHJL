@@ -6,6 +6,7 @@ import requests
 import json
 import pprint
 
+
 dataPointCity = ""
 dataPointAQ = ""
 dataPointTP = ""
@@ -13,9 +14,9 @@ dataPointTS = ""
 
  
 
-def writeHTML(data, dataPointCity, dataPointAQ, dataPointTP, dataPointTS):
+def writeHTML(html_string):
     global dataPointCity, dataPointAQ, dataPointTP, dataPointTS
-    myfile = open("mainnapi.html","w")
+    myfile = open("mainnnapi.html","w+")
     myfile.write("""
 
 
@@ -63,12 +64,15 @@ def writeHTML(data, dataPointCity, dataPointAQ, dataPointTP, dataPointTS):
             <p>Air pollution is a mix of particles and gases that can reach harmful concentrations both outside and indoors. Its effects can range from higher disease risks to rising temperatures. Soot, smoke, mold, pollen, methane, and carbon dioxide are a just few examples of common pollutants.
 
             </p>
+
             <p>An air quality index (AQI) is used by government agencies to communicate to the public how polluted the air currently is or how polluted it is forecast to become. Public health risks increase as the AQI rises.
-                </p> 
+            </p> 
 
 
         </div>
-    <p class = "headingtext">AQI of your current location</p>
+    <p class = "headingtext">AQI of your current location</p>""")
+    myfile.write(html_string)
+    myfile.write("""
 
         
 
@@ -83,20 +87,22 @@ def writeHTML(data, dataPointCity, dataPointAQ, dataPointTP, dataPointTS):
 
 
 def main():
-    global dataPointCity, dataPointAQ, dataPointTP, dataPointTS
+    global dataPointCity, dataPointAQ, dataPointTP, dataPointTS, writeHTML
     
     response = requests.get("http://api.airvisual.com/v2/nearest_city?key=f0213f5e-54c4-4605-b743-6e616656d762")
+
 
     if (response.status_code == 200):
 
         data = response.content
         data_as_str = data.decode()
-        writeHTML(data_as_str)
+        print(data_as_str)
+        # writeHTML(data_as_str)
         
         #dataPoints = datajson['data']
 
         datajson = response.json()
-        myfile = open("mainnapi.html","w")
+        # myfile = open("mainnapi.html","w")
         #dataPointCity = datajson['data']
         print("****")
         
@@ -111,14 +117,14 @@ def main():
             print ("Your current city is :" + dataPointCity)
             print("****")
             main()
-            myfile.write(data + "<p>Your current city is :" + dataPointCity + "</p>")
+            writeHTML(data + "<p>Your current city is :" + dataPointCity + "</p>")
 
         elif info == 2:
             dataPointTS = datajson['data']['current']['weather']['ts']
             print ("Data is from :" + dataPointTS)
             print("****")
             main()
-            myfile.write("Data is from :" + dataPointTS)
+            # myfile.write("Data is from :" + dataPointTS)
         
 
         elif info == 3:
@@ -126,7 +132,7 @@ def main():
             print ("Temperature :" + str(dataPointTP) + "˚C")
             print("****")
             main()
-            myfile.write("Temperature :" + str(dataPointTP))
+            # myfile.write("Temperature :" + str(dataPointTP))
             
 
         elif info == 4:
@@ -134,20 +140,12 @@ def main():
             print ("Air Quality Index is :" + str(dataPointAQ))
             print("****")
             main()
-            myfile.write("Air Quality Index is :" + str(dataPointAQ))
+            # myfile.write("Air Quality Index is :" + str(dataPointAQ))
         
-
-
-        '''
-        pprint.pprint(datajson)
-
-        for point in dataPoints:
-            print(f"{point['aqius']}: \n\tLocation; {point['city']} \n\tTemperature; {point['tp']} \n\tTime Stamp; {point['ts']}\n")
-        ''' 
 
     else:
         data = "Error has occured"
-        writeHTML(data)
+        # writeHTML(data)
 
 
 
