@@ -6,17 +6,11 @@ import requests
 import json
 import pprint
 
-
-dataPointCity = ""
-dataPointAQ = ""
-dataPointTP = ""
-dataPointTS = ""
-
  
 
-def writeHTML(html_string):
-    global dataPointCity, dataPointAQ, dataPointTP, dataPointTS
-    myfile = open("mainnnapi.html","w+")
+def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ):
+
+    myfile = open("jsonapi.html","w+")
     myfile.write("""
 
 
@@ -28,7 +22,7 @@ def writeHTML(html_string):
     <head>
         <title>HJL</title>
 
-        <link rel="stylesheet" href="json.css">
+        <link rel="stylesheet" href="json copy.css">
 
         <link rel='icon' href='favicon (1).ico' type='image/x-icon'/ >
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +31,7 @@ def writeHTML(html_string):
         <ul>
 
             <li><a class="active" href="index.html">HOME</a></li>
-            <li><a href="index.html" id="special"class="left" style="float:left;">JLEE</a></li>
+            <li><a href="hyunwookjleeucc.github.io" id="special"class="left" style="float:left;">JLEE</a></li>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
         </ul>
@@ -70,12 +64,12 @@ def writeHTML(html_string):
 
 
         </div>
-    <p class = "headingtext">AQI of your current location</p>""")
-    myfile.write(html_string)
-    myfile.write("""
+    <p class = "headingtext">Information of your current location</p>
 
-        
-
+    <p class = "bodytext">Location: """+ str(dataPointCity) +"""</p>
+    <p class = "bodytext">Timestamp of Data: """+ str(dataPointTS) + """</p>
+    <p class = "bodytext">Current Temperature: """+ str(dataPointTP)+ "˚C""""</p>
+    <p class = "bodytext">Air Quality Index: """+ str(dataPointAQ)+"""</p>
 
     <div class="footer">
         <a href="mailto:justin.lee22@ucc.on.ca">Contact Me</a>
@@ -84,11 +78,11 @@ def writeHTML(html_string):
 
     </body>
     </html>""")
+    myfile.close()
 
 
 def main():
-    global dataPointCity, dataPointAQ, dataPointTP, dataPointTS, writeHTML
-    
+     
     response = requests.get("http://api.airvisual.com/v2/nearest_city?key=f0213f5e-54c4-4605-b743-6e616656d762")
 
 
@@ -97,11 +91,14 @@ def main():
         data = response.content
         data_as_str = data.decode()
         print(data_as_str)
-        # writeHTML(data_as_str)
-        
-        #dataPoints = datajson['data']
-
         datajson = response.json()
+
+        dataPointCity = datajson['data']['city']
+        dataPointTS = datajson['data']['current']['weather']['ts']
+        dataPointTP = datajson['data']['current']['weather']['tp']
+        dataPointAQ = datajson['data']['current']['pollution']['aqius']
+        # dataPoints = datajson['data']
+        
         # myfile = open("mainnapi.html","w")
         #dataPointCity = datajson['data']
         print("****")
@@ -113,34 +110,31 @@ def main():
         info = int(input("What do you want to know about? \n"))
         
         if info == 1:
+            datajson = response.json()
             dataPointCity = datajson['data']['city']
             print ("Your current city is :" + dataPointCity)
-            print("****")
-            main()
-            writeHTML(data + "<p>Your current city is :" + dataPointCity + "</p>")
+            writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ)
+            
 
         elif info == 2:
+            datajson = response.json()
             dataPointTS = datajson['data']['current']['weather']['ts']
             print ("Data is from :" + dataPointTS)
-            print("****")
-            main()
-            # myfile.write("Data is from :" + dataPointTS)
+            writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ)
         
 
         elif info == 3:
+            datajson = response.json()
             dataPointTP = datajson['data']['current']['weather']['tp']
             print ("Temperature :" + str(dataPointTP) + "˚C")
-            print("****")
-            main()
-            # myfile.write("Temperature :" + str(dataPointTP))
+            writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ)
             
 
         elif info == 4:
+            datajson = response.json()
             dataPointAQ = datajson['data']['current']['pollution']['aqius']
             print ("Air Quality Index is :" + str(dataPointAQ))
-            print("****")
-            main()
-            # myfile.write("Air Quality Index is :" + str(dataPointAQ))
+            writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ)
         
 
     else:
