@@ -8,11 +8,13 @@ import pprint
 
  
 
-def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ):
+def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ): #passing through all points to display all points and guarantee functionality
+    #when passing through these points, it is important to maintain the order you want to print them; it will be switched if not ordered correctly
 
-    myfile = open("API Project/jsonapi.html","w+")
+    myfile = open("API Project/jsonapi.html","w+") 
+    # the w+ function will look for the file and if it exists, it will write this file and if it does not exist, it will write a new file and write the information
     myfile.write("""
-
+    
 
 	<!DOCTYPE html>
     <html>
@@ -78,15 +80,16 @@ def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ):
 
     </body>
     </html>""")
-    myfile.close()
+    myfile.close() # this function actually writes the HTML code and generates a website
 
 
 def main():
      
     response = requests.get("http://api.airvisual.com/v2/nearest_city?key=f0213f5e-54c4-4605-b743-6e616656d762")
+    # the website where I got the API key from
 
 
-    if (response.status_code == 200):
+    if (response.status_code == 200): #checking if the server responds
 
         data = response.content
         data_as_str = data.decode()
@@ -97,23 +100,26 @@ def main():
         dataPointTS = datajson['data']['current']['weather']['ts']
         dataPointTP = datajson['data']['current']['weather']['tp']
         dataPointAQ = datajson['data']['current']['pollution']['aqius']
-        # dataPoints = datajson['data']
-        
-        # myfile = open("mainnapi.html","w")
-        #dataPointCity = datajson['data']
+        # here the data is predefined to guarantee that the if function will work; sort of like a double safety
+        # if the data you are looking for is set in a special parameter, in this case 'current,' 'weather,' or 'pollution,'
+        # you need to give the program the exact location of each piece of data for it to execute the program
+
         print("****")
         
         print("1. Your current city")
         print("2. The timestamp of your data")
         print("3. The current temperature of your location")
         print("4. Air Quality Index of your location")
-        info = int(input("What do you want to know about? \n"))
+        info = int(input("What do you want to know about? \n")) 
+        # the user can choose which information they want to know in the terminal, but all four 
+        # pieces of information will be written to the html website
         
         if info == 1:
             datajson = response.json()
             dataPointCity = datajson['data']['city']
             print ("Your current city is :" + dataPointCity)
-            writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ)
+            writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ) # all four pieces written to html
+            # when writing to html, the orders had to be the same 
             
 
         elif info == 2:
@@ -143,4 +149,5 @@ def main():
 
 
 
-main()
+main() 
+# this is the part where it actually runs the program; before this is  just defining the functions writeHTML and main
