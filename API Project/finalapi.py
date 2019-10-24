@@ -30,8 +30,8 @@ def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ):
 
         <ul>
 
-            <li><a class="active" href="index.html">HOME</a></li>
-            <li><a href="hyunwookjleeucc.github.io" id="special"class="left" style="float:left;">JLEE</a></li>
+            <li><a class="active" href="hyunwookjleeucc.github.io copy/index.html">HOME</a></li>
+            <li><a href="hyunwookjleeucc.github.io copy/index.html" id="special"class="left" style="float:left;">JLEE</a></li>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
         </ul>
