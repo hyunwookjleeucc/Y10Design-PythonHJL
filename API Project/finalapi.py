@@ -10,7 +10,7 @@ import pprint
 
 def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ):
 
-    myfile = open("jsonapi.html","w+")
+    myfile = open("API Project/jsonapi.html","w+")
     myfile.write("""
 
 
@@ -22,7 +22,7 @@ def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ):
     <head>
         <title>HJL</title>
 
-        <link rel="stylesheet" href="json copy.css">
+        <link rel="stylesheet" href="json.css">
 
         <link rel='icon' href='favicon (1).ico' type='image/x-icon'/ >
         <meta name="viewport" content="width=device-width, initial-scale=1">
