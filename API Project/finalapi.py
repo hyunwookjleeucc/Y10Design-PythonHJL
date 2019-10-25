@@ -11,7 +11,7 @@ import pprint
 def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ): #passing through all points to display all points and guarantee functionality
     #when passing through these points, it is important to maintain the order you want to print them; it will be switched if not ordered correctly
 
-    myfile = open("API Project/jsonapi.html","w+") 
+    myfile = open("jsonapi.html","w+") 
     # the w+ function will look for the file and if it exists, it will write this file and if it does not exist, it will write a new file and write the information
     myfile.write("""
     
@@ -26,7 +26,7 @@ def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ): #passing th
 
         <link rel="stylesheet" href="json.css">
 
-        <link rel='icon' href='favicon (1).ico' type='image/x-icon'/ >
+        <link rel='icon' href='hyunwookjleeucc.github.io copy/favicon (1).ico' type='image/x-icon'/ >
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -72,6 +72,8 @@ def writeHTML(dataPointCity, dataPointTS, dataPointTP, dataPointAQ): #passing th
     <p class = "bodytext">Timestamp of Data: """+ str(dataPointTS) + """</p>
     <p class = "bodytext">Current Temperature: """+ str(dataPointTP)+ "˚C""""</p>
     <p class = "bodytext">Air Quality Index: """+ str(dataPointAQ)+"""</p>
+
+    <img src="aqi.jpg">
 
     <div class="footer">
         <a href="mailto:justin.lee22@ucc.on.ca">Contact Me</a>
