@@ -1,0 +1,38 @@
+/* top bar section */
+
+
+/* side bar section */
+
+.sidenav1 {
+    height: 30%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: -300;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    padding-top: 20px;
+    opacity: 0.1;
+    border-radius: 10px;
+  }
+  .sidenav1 a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Proxima Nova';
+    color: #111111;
+    display: block;;
+  }
+  .sidenav1:hover {
+    opacity:1;
+  }
+  .sidenav1 a:hover {
+    color: red;
+  }
+  
+
+/* textbox section */
+.messages{
+    margin-left: 170px;
+  }
