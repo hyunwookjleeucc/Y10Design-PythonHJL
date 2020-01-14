@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Proxmia+Nova" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+<head>
+   <title>StudyBuddy</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel='icon' href='favicon (1).ico' type='image/x-icon'/ >
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+<body>
+
+<ul>
+
+  <li><a href="tips.html">HELP</a></li>  
+  <li><a href="search.html">SEARCH FOR A TUTOR</a></li>
+  <li><a href="dashboard.html">DASHBOARD</a></li>
+  <li><a class="active" href="#home">HOME</a></li>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+<button onclick="location.href='tutorindex.html'.style.display='block'" style="width:auto;">StudyBuddy</button>
+
+</div>
+
+</ul>
+
+<div class="header">
+    <div class="headertext">
+        <p id="big"><b>WELCOME TO STUDYBUDDY</b></p>
+        <p id="small">This website is for Upper Canada College students looking for peer tutors or tutees.</p>
+        <p id="small">This will support the CFL's peer tutoring program through the easier process of finding tutors.</p>
+        <p id="small">Click on the buttons in the top bar to navigate through the website.</p>
+        <p id="small">Make sure to log in with your Google account to enjoy the full services of the website including messaging and calendar updates for your tutoring sessions!</p>
+    </div>
+  <button onclick="signin()" style="width:auto; text-align: center;">Login</button>
+
+</div>
+
+</body>
+
+<script>
+var provider = new firebase.auth.GoogleAuthProvider();
+        var userId = document.getElementById("uid").innerHTML;
+        
+        // Your web app's Firebase configuration that we copy-and-paste from 
+        // the Firebase setup
+        var config = {
+
+          ////////////// INSERT FIREBASE AUTHENTICATION CODE HERE //////////////
+          apiKey: "AIzaSyBOxwNCB9sDtOztxEUpgZCOiWYYK9PNzrY",
+            authDomain: "ucc2019-02.firebaseapp.com",
+            databaseURL: "https://ucc2019-02.firebaseio.com",
+            projectId: "ucc2019-02",
+            storageBucket: "ucc2019-02.appspot.com",
+            messagingSenderId: "830766808371",
+            appId: "1:830766808371:web:dba771fae5e2cdf445d246",
+            measurementId: "G-S2JG61Y858"
+          ////////////// INSERT FIREBASE AUTHENTICATION CODE HERE //////////////
+
+          };
+
+        firebase.initializeApp(config);
+        //firebase.analytics();
+
+        // Authentication Check: to see if you are logged in
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user == null) {
+                document.getElementById("uid").innerHTML = "not logged in";
+                return;
+            } else {
+                userId = user.uid; // you can also get .displayName, .photoURL, .email
+                document.getElementById("uid").innerHTML = userId; // display Google uid on page
+                
+            } // end user null check
+        }); // end check auth state
+
+
+        // Functions that will be used to "get" and "set" data, among other "helper"
+        // functions too...
+
+        function signin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider).then(function(result) { 
+                window.location.replace("fbtest.html");
+            });
+        } // end signin 
+</script>
+
+</html>

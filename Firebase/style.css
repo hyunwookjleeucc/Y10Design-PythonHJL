@@ -1,0 +1,517 @@
+body {
+    font-size: 18px;
+    font-family: 'Proxima Nova', sans-serif;
+    margin:0;
+    background-color:#f1f0f3;
+  }
+  .header {
+    background-image: url("http://hdqwalls.com/wallpapers/anime-minimalism-4k-4e.jpg");
+    animation-name: fadein;
+    object-fit: cover;
+    text-align: center;
+    object-fit: cover;
+    background-size: 115%;
+    height: 45vh;
+    padding-bottom:300px;
+    padding-top:100px;
+    font-size:24px;
+    color:  #95F2D9;
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    animation:1s;
+    animation-name:fadein;
+  } 
+  .headertext {
+    text-align:left;
+  }
+  @keyframes fadein {
+    from {
+      opacity:0;
+    }
+    to {
+      opacity:1;
+    }
+  }
+  #big {
+    font-size:35pt;
+    font-family: "Proxima Nova", sans-serif;
+    text-align: center;
+  }
+  #small {
+    font-size:13pt;
+    padding-left: 50px;
+    font-family: "Proxima Nova", sans-serif;
+    line-height: 14px;
+    color:white;
+  }
+  #smaller{
+    color:rgba(0,0,0,0.54);
+    font-size: 13px;
+    font-family: 'Proima Nova', sans-serif;
+    line-height: 14px;
+    padding:14px;
+    margin-top:40px;
+    background-color:white;
+  }
+  #smaller:hover{
+    animation-name: buttonhover;
+    animation-duration: 3s;
+  }
+  @keyframes buttonhover {
+    from {background-color: white}
+    to {background-color: darkgray}
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    background-color: white;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.19);
+    animation-name: fadein;
+    animation-duration: 2s;
+    z-index: 10;
+  }
+  
+  li a {
+    display: block;
+    color: rgba(0,0,0,0.54);
+    font-weight:500;
+    font-size: 13px;
+    font-stretch:100%;
+    text-align: center;
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:25px;
+    padding-bottom:25px;
+    text-decoration: none;
+    float: right;
+    position: sticky;
+  }
+  #special:hover {
+    animation-name: logohover;
+    animation-duration: 4s;
+  }
+  #soundcloud {
+    padding-top:100px;
+  }
+  @keyframes logohover {
+    from {background-color: white;
+      color:black;}
+    to {background-color: black;
+      color:white;}
+  }
+  @keyframes hover {
+    from {background-color: white;}
+    to {background-color: #D7D7D7;}
+  }
+  li a:hover {
+    animation-name: hover;
+    animation-duration: 4s;
+  }
+  .active {
+    box-sizing: border-box;
+  }
+  .row {
+    background-color:#f1f0f3;
+    margin-bottom:150px;
+    position:static;
+  }
+  .row > .column {
+    padding: 0 8px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+  }
+  .column {
+    float: left;
+    width: 20%;
+    margin:20px;
+    margin-left:40px;
+  }
+  img {
+    margin-bottom: -4px;
+    filter: contrast(75%);
+  }
+  img.hover-shadow {
+    transition: 1s;
+  }
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 30px 0 rgba(0, 0, 0, 0.19);
+    filter: contrast(120%)saturate(120%);
+  }
+  .headingtext {
+    text-align:center;
+    font-family:"Montserrat";
+    font-size:20px;
+    padding-bottom:10px;
+  }
+  .headingtext1 {
+    text-align:center;
+    font-family:"Montserrat";
+    font-size:14px;
+    color:rgba(0,0,0,0.54);
+    padding-bottom:30px;
+  }
+  .overlay {
+    opacity:0;
+    transition:1s;
+  }
+  .column:hover .overlay {
+    opacity: 1;
+  }
+  .text {
+    text-align:center;
+    padding-top:23px;
+    color:red;
+    font-family:"Montserrat";
+  }
+  .uav {
+    text-align:center;
+    font-size:12px;
+    padding-top: 10px;
+    font-family:"Montserrat";
+    color:red;
+  }
+  
+  
+  ul.specul {
+    position:absolute;
+    background-color:#f1f0f3;
+    top:1100px;
+    display:flex;
+    margin:0;
+    padding-top:80px;
+    width:100%;
+    height:50%;
+    justify-content: center;
+  }
+  ul.specul li.spec {
+    list-style:none;
+    margin:0 5px;
+  }
+  ul.specul li.spec a.speca .fa {
+    font-size: 40px;
+    color: blue;
+    padding-top:0px;
+    transition: .5s;
+    padding-right: 3px;
+  }
+  ul.specul li.spec a.speca span {
+    font-family:"lato";
+    transform: translateY(-7.5px);
+    padding:0;
+    margin-top:0;
+    position:absolute;
+    color: #262626;
+    letter-spacing: 2px;
+    transition: .5s;
+  }
+  ul.specul li.spec a.speca {
+    text-decoration: none;
+    display:absolute;
+    display:block;
+    width:105px;
+    height:40px;
+    background: #fff;
+    text-align:left;
+    padding-left: 10px;
+    transform: rotate(-30deg) skew(25deg) translate(0,0);
+    transition:.5s;
+    box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+  }
+  ul.specul li.spec a.speca:before {
+    content: '';
+    position: absolute;
+    top:10px;
+    left:-20px;
+    height:100%;
+    width:20px;
+    background: #b1b1b1;
+    transform: .5s;
+    transform: rotate(0deg) skewY(-45deg);
+  }
+  ul.specul li.spec a.speca:after {
+    content: '';
+    position: absolute;
+    bottom:-20px;
+    left:-10px;
+    height:20px;
+    width:100%;
+    background: #b1b1b1;
+    transform: .5s;
+    transform: rotate(0deg) skewX(-45deg);
+  }
+  ul.specul li.spec a.speca:hover {
+    transform: rotate(-30deg) skew(25deg) translate(20px,-15px);
+    box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+  }
+  ul.specul li.spec:hover .fa {
+    color:#fff;
+  }
+  ul.specul li.spec:hover span {
+    color:#fff;
+  }
+  ul.specul li.spec:hover:nth-child(2) a.speca:before{
+    background: #365492;
+  }
+  ul.specul li.spec:hover:nth-child(2) a.speca:after{
+    background: #4a69ad;
+  }
+  ul.specul li.spec:hover:nth-child(3) a.speca:before{
+    background: #097aa5;
+  }
+  ul.specul li.spec:hover:nth-child(3) a.speca:after{
+    background: #53b9e0;
+  }
+  ul.specul li.spec:hover:nth-child(4) a.speca:before{
+    background: #b33a2b;
+  }
+  ul.specul li.spec:hover:nth-child(4) a.speca:after{
+    background: #e66a5a;
+  }
+  ul.specul li.spec:hover:nth-child(5) a.speca:before{
+    background: #d81c3f;
+  }
+  ul.specul li.spec:hover:nth-child(5) a.speca:after{
+    background: #e46880;
+  }
+  
+  body {font-family: Arial, Helvetica, sans-serif;}
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 15px
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+  }
+  
+  
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+  
+  
+  
+  
+  
+  body {font-family: Arial, Helvetica, sans-serif;}
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 25%;
+    border-radius: 50%;
+  
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+  }
+  
+  
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+  
+  
+  

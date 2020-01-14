@@ -1,4 +1,52 @@
-var provider = new firebase.auth.GoogleAuthProvider();
+
+<!-- Welcome to some sample code to control your Firebase Database -->
+<!-- HERE IS YOUR HTML TO SET UP YOUR PAGE -->
+<html>
+    <head>
+        <!-- HERE ARE YOUR FIREBASE and GOOGLE AUTHENICATION IMPORTS -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Add SDKs for Firebase products that you want to use 
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+ 
+    </head>
+
+    <body >
+            <h1 id="uid"></h1>
+            
+            <!-- HERE IS YOUR HTML CODE TO SET TEXT -->
+            <h3>Prototype of UCC Peer Tutoring</h3>
+
+            <button onclick = "signin()" >Sign In</button>
+            <button onclick ="location.href='tutorindex.html'"> Click here if you are a tutor</button>
+           
+            <input type="text" id="student" value="Enter Student">
+            <input type="text" id="subject" value="Enter Subject">
+            <input type="text" id="mark" value="Enter Mark">
+
+            <button onclick = "setData()" >Set Data</button>
+            <button onclick = "getData()" >Get data</button>
+
+            <p>Current Data:</p>
+
+            <!-- ol means ordered list -->
+            <p><ol id="studentList"></ol><ol id="subjectList"></ol><ol id="markList"></ol></p>    
+                 
+    </body>
+    
+    <!-- HERE IS THE JAVASCRIPT TO CONNECT TO YOUR FIREBASE -->
+    <script>
+
+        // Variables created here to be used throughout the program
+
+        var provider = new firebase.auth.GoogleAuthProvider();
         var userId = document.getElementById("uid").innerHTML;
         
         // Your web app's Firebase configuration that we copy-and-paste from 
@@ -141,3 +189,6 @@ var provider = new firebase.auth.GoogleAuthProvider();
             console.log('Error!')
             console.log(err)
         }
+
+    </script>
+</html>

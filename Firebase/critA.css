@@ -1,8 +1,4 @@
-/* top bar section */
-
-
 /* side bar section */
-
 .sidenav1 {
     height: 30%;
     width: 160px;
@@ -30,7 +26,7 @@
   .sidenav1 a:hover {
     color: red;
   }
-  
+
 
 /* textbox section */
 .messages{
