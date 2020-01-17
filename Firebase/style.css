@@ -5,22 +5,36 @@ body {
     background-color:#f1f0f3;
   }
   .header {
-    background-image: url("http://hdqwalls.com/wallpapers/anime-minimalism-4k-4e.jpg");
+    background-color: #F6F5AE;
     animation-name: fadein;
     object-fit: cover;
     text-align: center;
-    object-fit: cover;
-    background-size: 115%;
-    height: 45vh;
-    padding-bottom:300px;
+    background-size: cover;
+    padding-bottom:600px;
     padding-top:100px;
     font-size:24px;
-    color:  #95F2D9;
+    color:  rgb(43, 40, 224);
     font-family: "Proxima Nova";
     font-weight: 300;
     animation:1s;
     animation-name:fadein;
-  } 
+  }
+  
+  .headerlanding {
+    background-color: #F6F5AE;
+    animation-name: fadein;
+    object-fit: cover;
+    text-align: center;
+    background-size: cover;
+    padding-bottom:310px;
+    padding-top:100px;
+    font-size:24px;
+    color:  rgb(43, 40, 224);
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    animation:1s;
+    animation-name:fadein;
+  }
   .headertext {
     text-align:left;
   }
@@ -42,7 +56,7 @@ body {
     padding-left: 50px;
     font-family: "Proxima Nova", sans-serif;
     line-height: 14px;
-    color:white;
+    color:black;
   }
   #smaller{
     color:rgba(0,0,0,0.54);
@@ -319,7 +333,7 @@ body {
   }
   
   img.avatar {
-    width: 15px
+    width: 15px;
     border-radius: 50%;
   }
   
@@ -394,124 +408,289 @@ body {
        width: 100%;
     }
   }
-  
-  
   
   
   
   body {font-family: Arial, Helvetica, sans-serif;}
   
+.flex-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(41, 40, 44);
+  height: 55ch;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 50%;
+  margin-top: 60px;
+  border-radius: 5px;
+  font-family: 'Proxima Nova';
+}
+
+.flex-container > div {
+  background-color: rgb(83, 199, 29);
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  padding: 20px;
+  padding-top: 20px;
+  font-family: 'Proxima Nova';
+}
+
+/* .signup {
+  mar
+} */
+
+.input-parent {
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  font: "Proxima Nova";
+}
+
+.inputs {
+  border: none;
+  text-align: left;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.labels {
+  padding-bottom: 50px;
+  font-family: 'Proxima Nova';
+}
+
+.sidenav0 {
+  height: 30%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: -300;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+
+.sidenav0 a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Proxima Nova';
+  color: #111111;
+  display: block;;
+}
+
+.sidenav0:hover {
+  opacity:1;
+}
+
+.sidenav0 a:hover {
+  color: #95F2D9;
+}
+
+.sidenav1 {
+  height: 30%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: -300;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+
+.sidenav1 a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Proxima Nova';
+  color: #111111;
+  display: block;;
+}
+
+.sidenav1:hover {
+  opacity:1;
+}
+
+.sidenav1 a:hover {
+  color: red;
+}
+
+.sidenav2 {
+  height: 30%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: -300;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+
+.sidenav2 a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Proxima Nova';
+  color: #111111;
+  display: block;;
+}
+
+.sidenav2:hover {
+  opacity:1;
+}
+
+.sidenav2 a:hover {
+  color: green;
+}
+
+.sidenav3 {
+  height: 30%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: -300;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+
+.sidenav3 a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Proxima Nova';
+  color: #111111;
+  display: block;;
+}
+
+.sidenav3:hover {
+  opacity:1;
+}
+
+.sidenav3 a:hover {
+  color: purple;
+}
+
+* {box-sizing: border-box}
+/* Full-width input fields */
   input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
   }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
-  
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-  }
-  
-  img.avatar {
-    width: 25%;
-    border-radius: 50%;
-  
-  }
-  
-  .container {
-    padding: 16px;
-  }
-  
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-  
-  .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-    padding-top: 60px;
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; 
-    border: 1px solid #888;
-    width: 80%; 
-  }
-  
-  
-  .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
-  
-  .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
-  
-  @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-  }
-    
-  @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-  }
-  
-  @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-  }
-  
-  
-  
+}
