@@ -85,12 +85,17 @@ window.onclick = function(event) {
 
 //   PASSWORD CHECKING FUNCTION
 
-
+let email;
+console.log(firebase.auth());
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       userId = user.uid;
-
+        email = user.email;
+        console.log(user.email);
+    document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email}`;
+                                                            // "Email: " + email;
     } else {
+        console.log("not logged in");
       return;
     }
   });
@@ -125,6 +130,7 @@ window.onclick = function(event) {
     // "PUSH" means we add something to the database
 
     ref.push(data).then(() => {
+      console.log("YEEEET")
       window.location.href="dashboard.html"
     });
   }
