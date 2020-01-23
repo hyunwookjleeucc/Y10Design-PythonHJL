@@ -45,6 +45,7 @@
             .database()
             .ref("/users")
             .push(newUser);
+            window.location.href = "personalquestions.html"
         }
       });
     //   const firstName = document.getElementById("firstName").value;
@@ -82,13 +83,13 @@ window.onclick = function(event) {
   }
 }
 
-  
+//   PASSWORD CHECKING FUNCTION
 
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       userId = user.uid;
-      
+
     } else {
       return;
     }
@@ -127,3 +128,19 @@ window.onclick = function(event) {
       window.location.href="dashboard.html"
     });
   }
+
+
+    var password = document.getElementById("password"),
+    confirm_password = document.getElementById("passwordr");
+
+    function validatePassword() {
+    if (password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+
+        confirm_password.setCustomValidity("You're good!");
+    }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;

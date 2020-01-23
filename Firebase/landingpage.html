@@ -36,7 +36,7 @@
 
     <button onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
 
-The Popup Window (contains the Sign Up form)
+<!-- The Popup Window (contains the Sign Up form) -->
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">times;</span>
   <form class="modal-content">
@@ -48,18 +48,23 @@ The Popup Window (contains the Sign Up form)
       <input id="email" type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
-      <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+      <!-- <input id="password" type="password" placeholder="Enter Password" name="psw" required> -->
+
+      <input type="password" placeholder="Password" id="password" required>
+        
 
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <input id="passwordr" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <!-- <input type="passwordr" placeholder="Confirm Password" id="passwordr" required> -->
 
       <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        <input type="checkbox" checked="false" name="remember" style="margin-bottom:15px"> Remember me
       </label>
 
       <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
+        <button type="submit" class="signup" onclick="validatePassword()">Confirm Password</button>
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         <button type="button" class="signup" onclick="signup()">Sign Up</button>
       </div>
