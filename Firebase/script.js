@@ -25,7 +25,7 @@
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .catch(err => {
-        alert(`Uh oh! Poopee! | ${err.code}: ${err.message}`);
+        alert(`error | ${err.code}: ${err.message}`);
         ableToCreateUser = false;
       })
       .then(user => {
@@ -88,6 +88,7 @@ window.onclick = function(event) {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       userId = user.uid;
+      
     } else {
       return;
     }
@@ -100,4 +101,29 @@ window.onclick = function(event) {
     firebase
       .auth()
       .signInWithPopup(provider);
+  }
+
+  function submit() {
+    // Create a database object that we can refer to
+    var database = firebase.database();
+
+    // Create a reference to a particular location or "node" called StudentInfo
+    var ref = database.ref('userinfo');
+
+    // Grab the Name, Subject, and Grade obtained from the HTML frontend textboxes
+    var socialmedia = document.getElementById("socialmedia").value;
+    var slanguages = document.getElementById("language").value;
+    var sinterests = document.getElementById("interest").value;
+    
+    // Create a JSON object to add to the database with user-inputted data
+    var data = {
+        socialmedia: socialmedia,
+        languages: slanguages,
+        interests: sinterests
+    }
+    // "PUSH" means we add something to the database
+
+    ref.push(data).then(() => {
+      window.location.href="dashboard.html"
+    });
   }
