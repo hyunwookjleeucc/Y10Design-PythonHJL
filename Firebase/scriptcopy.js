@@ -1,58 +1,4 @@
-<!DOCTYPE html>
-<html>
-<link href="https://fonts.googleapis.com/css?family=Proxmia+Nova" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<head>
-   <title>StudyBuddy</title>
-
-  <link rel="stylesheet" href="style.css">
-  <link rel='icon' href='favicon (1).ico' type='image/x-icon'/ >
-
-</head>
-<body>
-
-<ul>
-
-  <li><a href="tips.html">HELP</a></li>  
-  <li><a href="search.html">SEARCH FOR A TUTOR</a></li>
-  <li><a href="dashboard.html">DASHBOARD</a></li>
-  <li><a class="active" href="landingpage.html">HOME</a></li>
-  <li><a href="landingpage.html" id="special"class="left" style="float:left;">StudyBuddy</a></li>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</ul>
-
-<div class="header">
-  <p id="big"><b>Questions to get your interests!</b></p>
-
-  <div class="flex-container">
-        <form class="input-parent">
-          <p>
-            <label class="labels">Social Media Tag</label>
-          </p>
-          <input class="inputs" type="text" id="socialmedia" />
-  
-          <p>
-            <label class="labels">Languages</label>
-          </p>
-          <input class="inputs" type="text" id="language" />
-  
-          <p>
-            <label class="labels">Interests</label>
-          </p>
-          <input class="inputs" type="text" id="interest" />
-
-  
-          <button type="button" href="dashboard.html" onclick="submit()">Submit</button>
-        </form>
-      </div>
-
-</div>
-
-    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
-    <script>
-    (function() {
+(function() {
     var config = {
         apiKey: "AIzaSyBOxwNCB9sDtOztxEUpgZCOiWYYK9PNzrY",
         authDomain: "ucc2019-02.firebaseapp.com",
@@ -137,7 +83,7 @@ window.onclick = function(event) {
   }
 }
 
- /////////////////// FUNCTIONS //////////////////
+//   PASSWORD CHECKING FUNCTION
 
 let email;
 console.log(firebase.auth());
@@ -146,7 +92,7 @@ console.log(firebase.auth());
       userId = user.uid;
         email = user.email;
         console.log(user.email);
-    // document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email}`;
+    document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email}`;
                                                             // "Email: " + email;
     } else {
         console.log("not logged in");
@@ -154,6 +100,7 @@ console.log(firebase.auth());
     }
   });
 
+  /////////////////// FUNCTIONS //////////////////
 
   function signin() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -163,6 +110,7 @@ console.log(firebase.auth());
   }
 
   function submit() {
+      console.log("calling the submit fn")
     // Create a database object that we can refer to
     var database = firebase.database();
 
@@ -180,8 +128,6 @@ console.log(firebase.auth());
         languages: slanguages,
         interests: sinterests
     }
-
-    console.log(data)
     // "PUSH" means we add something to the database
 
     ref.push(data).then(() => {
@@ -203,9 +149,5 @@ console.log(firebase.auth());
     }
     }
 
-    // password.onchange = validatePassword;
-    // confirm_password.onkeyup = validatePassword;
-
-    </script>
-</body>
-</html>
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;

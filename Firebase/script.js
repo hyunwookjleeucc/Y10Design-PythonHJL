@@ -83,7 +83,7 @@ window.onclick = function(event) {
   }
 }
 
-//   PASSWORD CHECKING FUNCTION
+ /////////////////// FUNCTIONS //////////////////
 
 let email;
 console.log(firebase.auth());
@@ -100,7 +100,6 @@ console.log(firebase.auth());
     }
   });
 
-  /////////////////// FUNCTIONS //////////////////
 
   function signin() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -127,6 +126,8 @@ console.log(firebase.auth());
         languages: slanguages,
         interests: sinterests
     }
+
+    console.log(data)
     // "PUSH" means we add something to the database
 
     ref.push(data).then(() => {
