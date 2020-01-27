@@ -683,7 +683,6 @@ body {
   display: flex;
   justify-content: center;
   background-color: rgb(46, 41, 41);
-
   flex-direction: column;
   margin: 0px auto;
   width: 50%;

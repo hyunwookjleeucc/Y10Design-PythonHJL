@@ -86,19 +86,90 @@ window.onclick = function(event) {
  /////////////////// FUNCTIONS //////////////////
 
 let email;
+// let language;
+// let socialmedia;
+// let interests;
 console.log(firebase.auth());
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(async function(user) {
     if (user) {
       userId = user.uid;
         email = user.email;
-        console.log(user.email);
+        getUserData();
+        // console.log(userData);
     document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email}`;
-                                                            // "Email: " + email;
+    // document.getElementById("hyunwookiskorean2").innerHTML = `Languages: ${userData.languages}`;
+    // document.getElementById("hyunwookiskorean3").innerHTML = `Subjects & Interests: ${userData.interests}`;
+    // document.getElementById("hyunwookiskorean4").innerHTML = `Social Media: ${userData.socialmedia}`;
+    //                                                         // "Email: " + email;
     } else {
         console.log("not logged in");
       return;
     }
   });
+
+const getUserData = async () => {
+  firebase.database().ref("/userinfo").once("value").then(_users => {
+    _users.forEach(_user => {
+      const user = _user.val();
+      const data = {
+        languages: user.languages,
+        interests: user.interests,
+        socialmedia: user.socialmedia,
+        firstname: user.firstname,
+        lastname: user.lastname
+      }
+      console.log(data);
+      document.getElementById("hyunwookiskorean2").innerHTML = `Languages: ${data.languages}`;
+      document.getElementById("hyunwookiskorean3").innerHTML = `Subjects & Interests: ${data.interests}`;
+      document.getElementById("hyunwookiskorean4").innerHTML = `Social Media: ${data.socialmedia}`;
+      document.getElementById("hyunwookiskorean5").innerHTML = `Name: ${data.firstname} ${data.lastname}`;
+
+    });
+  })
+}
+
+  // console.log(firebase.auth());
+    // firebase.auth().onAuthStateChanged(function(user) {
+    //   if (user) {
+    //     userId = user.uid;
+    //       language = user.language;
+    //       console.log(user.language);
+    //   document.getElementById("hyunwookiskorean2").innerHTML = `Language: ${language}`;
+    //                                                           // "Email: " + email;
+    //   } else {
+    //       console.log("not logged in");
+    //     return;
+    //   }
+    // });
+  
+    // let socialmedia;
+    // console.log(firebase.auth());
+    //   firebase.auth().onAuthStateChanged(function(user) {
+    //     if (user) {
+    //       userId = user.uid;
+    //         socialmedia = user.socialmedia;
+    //         console.log(user.language);
+    //     document.getElementById("hyunwookiskorean2").innerHTML = `Language: ${language}`;
+    //                                                             // "Email: " + email;
+    //     } else {
+    //         console.log("not logged in");
+    //       return;
+    //     }
+    //   });
+
+      // console.log(firebase.auth());
+      //   firebase.auth().onAuthStateChanged(function(user) {
+      //     if (user) {
+      //       userId = user.uid;
+      //         language = user.language;
+      //         console.log(user.language);
+      //     document.getElementById("hyunwookiskorean2").innerHTML = `Language: ${language}`;
+      //                                                             // "Email: " + email;
+      //     } else {
+      //         console.log("not logged in");
+      //       return;
+      //     }
+      //   });
 
 
   function signin() {
@@ -108,20 +179,29 @@ console.log(firebase.auth());
       .signInWithPopup(provider);
   }
 
+  console.log("hi");
+  document.getElementById("testypoopy").addEventListener('click', () => {
+    submit();
+  });
+
   function submit() {
     // Create a database object that we can refer to
-    var database = firebase.database();
+    // var database = firebase.database();
 
     // Create a reference to a particular location or "node" called StudentInfo
-    var ref = database.ref('userinfo');
+    // var ref = database.ref('userinfo');
 
     // Grab the Name, Subject, and Grade obtained from the HTML frontend textboxes
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
     var socialmedia = document.getElementById("socialmedia").value;
     var slanguages = document.getElementById("language").value;
     var sinterests = document.getElementById("interest").value;
     
     // Create a JSON object to add to the database with user-inputted data
     var data = {
+        firstname: firstname,
+        lastname: lastname,
         socialmedia: socialmedia,
         languages: slanguages,
         interests: sinterests
@@ -130,24 +210,22 @@ console.log(firebase.auth());
     console.log(data)
     // "PUSH" means we add something to the database
 
-    ref.push(data).then(() => {
+    firebase.database().ref("/userinfo").push(data).then(() => {
       console.log("YEEEET")
       window.location.href="dashboard.html"
     });
   }
 
+  function validatePassword() {
+    const password = document.getElementById("password");
+    const confirm_password = document.getElementById("passwordr");
+  if (password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
 
-    var password = document.getElementById("password"),
-    confirm_password = document.getElementById("passwordr");
+      confirm_password.setCustomValidity("You're good!");
+  }
+  }
 
-    function validatePassword() {
-    if (password.value != confirm_password.value) {
-        confirm_password.setCustomValidity("Passwords Don't Match");
-    } else {
-
-        confirm_password.setCustomValidity("You're good!");
-    }
-    }
-
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
