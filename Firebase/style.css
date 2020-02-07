@@ -68,7 +68,7 @@ body {
   }
   #small {
     font-size:13pt;
-    padding-left: 50px;
+    text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 14px;
     color:black;
@@ -725,4 +725,42 @@ body {
 
 .labels {
   padding-bottom: 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Search Bar */
+form.example input[type=text] {
+  padding: 500px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: center;
+  width: 50%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
 }

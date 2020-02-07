@@ -48,28 +48,6 @@
             window.location.href = "personalquestions.html"
         }
       });
-    //   const firstName = document.getElementById("firstName").value;
-    //   const lastName = document.getElementById("lastName").value;
-    //   const email = document.getElementById("email").value;
-    //   const password = document.getElementById("password").value;
-  
-    //   const user = {
-    //     firstName,
-    //     lastName,
-    //     email,
-    //     password
-    //   };
-  
-    //   firebase
-    //     .database()
-    //     .ref("/users")
-    //     .push(user)
-    //     .then(() => {
-    //       alert("Signed up!");
-    //     })
-    //     .catch(err => {
-    //       alert(err.code, err.message);
-    //     });
   };
 
 
@@ -118,7 +96,7 @@ const getUserData = async () => {
         firstname: user.firstname,
         lastname: user.lastname
       }
-      console.log(data);
+
       document.getElementById("hyunwookiskorean2").innerHTML = `Languages: ${data.languages}`;
       document.getElementById("hyunwookiskorean3").innerHTML = `Subjects & Interests: ${data.interests}`;
       document.getElementById("hyunwookiskorean4").innerHTML = `Social Media: ${data.socialmedia}`;
@@ -128,49 +106,6 @@ const getUserData = async () => {
   })
 }
 
-  // console.log(firebase.auth());
-    // firebase.auth().onAuthStateChanged(function(user) {
-    //   if (user) {
-    //     userId = user.uid;
-    //       language = user.language;
-    //       console.log(user.language);
-    //   document.getElementById("hyunwookiskorean2").innerHTML = `Language: ${language}`;
-    //                                                           // "Email: " + email;
-    //   } else {
-    //       console.log("not logged in");
-    //     return;
-    //   }
-    // });
-  
-    // let socialmedia;
-    // console.log(firebase.auth());
-    //   firebase.auth().onAuthStateChanged(function(user) {
-    //     if (user) {
-    //       userId = user.uid;
-    //         socialmedia = user.socialmedia;
-    //         console.log(user.language);
-    //     document.getElementById("hyunwookiskorean2").innerHTML = `Language: ${language}`;
-    //                                                             // "Email: " + email;
-    //     } else {
-    //         console.log("not logged in");
-    //       return;
-    //     }
-    //   });
-
-      // console.log(firebase.auth());
-      //   firebase.auth().onAuthStateChanged(function(user) {
-      //     if (user) {
-      //       userId = user.uid;
-      //         language = user.language;
-      //         console.log(user.language);
-      //     document.getElementById("hyunwookiskorean2").innerHTML = `Language: ${language}`;
-      //                                                             // "Email: " + email;
-      //     } else {
-      //         console.log("not logged in");
-      //       return;
-      //     }
-      //   });
-
 
   function signin() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -179,7 +114,6 @@ const getUserData = async () => {
       .signInWithPopup(provider);
   }
 
-  console.log("hi");
   document.getElementById("testypoopy").addEventListener('click', () => {
     submit();
   });
@@ -207,11 +141,9 @@ const getUserData = async () => {
         interests: sinterests
     }
 
-    console.log(data)
     // "PUSH" means we add something to the database
 
     firebase.database().ref("/userinfo").push(data).then(() => {
-      console.log("YEEEET")
       window.location.href="dashboard.html"
     });
   }
@@ -229,3 +161,36 @@ const getUserData = async () => {
 
   password.onchange = validatePassword;
   confirm_password.onkeyup = validatePassword;
+
+
+  function getData() {
+
+    // Create a database object that we can refer to
+    var database = firebase.database();
+
+    // Create a reference to a particular location or "node"
+    // 'StudentInfo'is the name of the main branch in the database
+    var ref = database.ref('tutorinfo');
+
+    // we will make reference to each 'value' of a database object which will have 
+    // two helper functions latched "on" to it to perform additional tasks 
+    // - either we have access to data values, or we don't and there is an error
+
+    ref.on('value', gotData, errData) 
+    // jump to the helper function...think of 'value' as the parameter that is passed
+
+} // end getdata
+
+function displayinfo() {
+
+  console.log(hi)
+  var data ={
+    areas = firebase.database().ref("/tutorinfo/Eli Preston")
+  }
+  // document.getElementById("tutor1").innerHTML = `Languages: ${data.languages}`;
+  // document.getElementById("tutor2").innerHTML = "";
+  // document.getElementById("tutor3").innerHTML = "";
+  // document.getElementById("tutor4").innerHTML = "";
+
+    
+  }
