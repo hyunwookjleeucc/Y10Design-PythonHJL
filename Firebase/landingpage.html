@@ -20,7 +20,8 @@
   <li><a href="tips.html">HELP</a></li>  
   <li><a href="search.html">SEARCH FOR A TUTOR</a></li>
   <li><a href="dashboard.html">DASHBOARD</a></li>
-  <li><a class="active" href="#home">HOME</a></li>
+  <li><a class="active" href="landingpage.html">HOME</a></li>
+  <li><a onclick="logout()">LOGOUT</a></li>
   <a href="landingpage.html"><button type="button" style="width:auto;">StudyBuddy</button></a>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </ul>
@@ -45,12 +46,12 @@
       <p>Please fill in this form to create an account.</p>
       <hr>
       <label for="email"><b>Email</b></label>
-      <input id="email" type="text" placeholder="Enter Email" name="email" required>
+      <input class="email" type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
       <!-- <input id="password" type="password" placeholder="Enter Password" name="psw" required> -->
 
-      <input type="password" placeholder="Password" id="password" required>
+      <input type="password" placeholder="Password" class="password" required>
         
 
       <label for="psw-repeat"><b>Repeat Password</b></label>
@@ -74,10 +75,20 @@
 <br>
    <button onclick="signin()" style="text-align: center;">Login with Google</button>
 
+  <input style = "width:70%;" type="text" placeholder="Email..." class="email" name="email" id="emailid" />
+  <input style = "width:70%;" type="password" placeholder="Password..." class="password" id="passwordid" />
+  
+  
+
+  <button style="background-color:darkgoldenrod"type="button" onclick="signinwemail()">Login to Account</button>
+
+
 </div>
 
-  <script src="script.js"></script>
-
 </body> 
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+<script src="script.js"></script>
 
 </html>

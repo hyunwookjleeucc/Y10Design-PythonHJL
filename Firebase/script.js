@@ -60,31 +60,42 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+  
+function signinwemail() {
+  const email = document.getElementById("emailid").value;
+  const password = document.getElementById("passwordid").value;
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch((err) => {
+      alert(`${err.code} ${err.message}`);
+    });
+    console.log("logged in")
+}
 
- /////////////////// FUNCTIONS //////////////////
+  
+  function logout(){
+    firebase.auth().signOut();
+  }
+  
 
+
+//  displaying the user email based on the logged in user
 let email;
-// let language;
-// let socialmedia;
-// let interests;
 console.log(firebase.auth());
   firebase.auth().onAuthStateChanged(async function(user) {
     if (user) {
       userId = user.uid;
         email = user.email;
         getUserData();
-        // console.log(userData);
     document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email}`;
-    // document.getElementById("hyunwookiskorean2").innerHTML = `Languages: ${userData.languages}`;
-    // document.getElementById("hyunwookiskorean3").innerHTML = `Subjects & Interests: ${userData.interests}`;
-    // document.getElementById("hyunwookiskorean4").innerHTML = `Social Media: ${userData.socialmedia}`;
-    //                                                         // "Email: " + email;
     } else {
         console.log("not logged in");
       return;
     }
   });
 
+// displaying the gathered user data in dashboard
 const getUserData = async () => {
   firebase.database().ref("/userinfo").once("value").then(_users => {
     _users.forEach(_user => {
@@ -97,16 +108,16 @@ const getUserData = async () => {
         lastname: user.lastname
       }
 
-      document.getElementById("hyunwookiskorean2").innerHTML = `Languages: ${data.languages}`;
-      document.getElementById("hyunwookiskorean3").innerHTML = `Subjects & Interests: ${data.interests}`;
-      document.getElementById("hyunwookiskorean4").innerHTML = `Social Media: ${data.socialmedia}`;
+      document.getElementById("hyunwookiskorean2").innerHTML = `${data.languages}`;
+      document.getElementById("hyunwookiskorean3").innerHTML = `${data.interests}`;
+      document.getElementById("hyunwookiskorean4").innerHTML = `${data.socialmedia}`;
       document.getElementById("hyunwookiskorean5").innerHTML = `Name: ${data.firstname} ${data.lastname}`;
 
     });
   })
 }
 
-
+// sign in with Google function
   function signin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
@@ -118,14 +129,13 @@ const getUserData = async () => {
     submit();
   });
 
+  function resetinfo() {
+    window.location.href = "personalquestions.html"
+  }
+
+  // creating a new node for personal information for the tutees.
   function submit() {
-    // Create a database object that we can refer to
-    // var database = firebase.database();
-
-    // Create a reference to a particular location or "node" called StudentInfo
-    // var ref = database.ref('userinfo');
-
-    // Grab the Name, Subject, and Grade obtained from the HTML frontend textboxes
+    
     var firstname = document.getElementById("firstname").value;
     var lastname = document.getElementById("lastname").value;
     var socialmedia = document.getElementById("socialmedia").value;
@@ -141,13 +151,12 @@ const getUserData = async () => {
         interests: sinterests
     }
 
-    // "PUSH" means we add something to the database
-
     firebase.database().ref("/userinfo").push(data).then(() => {
       window.location.href="dashboard.html"
     });
   }
 
+  // Checking the password to see if the two passwords match
   function validatePassword() {
     const password = document.getElementById("password");
     const confirm_password = document.getElementById("passwordr");
@@ -163,34 +172,23 @@ const getUserData = async () => {
   confirm_password.onkeyup = validatePassword;
 
 
-  function getData() {
-
-    // Create a database object that we can refer to
-    var database = firebase.database();
-
-    // Create a reference to a particular location or "node"
-    // 'StudentInfo'is the name of the main branch in the database
-    var ref = database.ref('tutorinfo');
-
-    // we will make reference to each 'value' of a database object which will have 
-    // two helper functions latched "on" to it to perform additional tasks 
-    // - either we have access to data values, or we don't and there is an error
-
-    ref.on('value', gotData, errData) 
-    // jump to the helper function...think of 'value' as the parameter that is passed
-
-} // end getdata
-
-function displayinfo() {
-
-  console.log(hi)
-  var data ={
-    areas = firebase.database().ref("/tutorinfo/Eli Preston")
-  }
-  // document.getElementById("tutor1").innerHTML = `Languages: ${data.languages}`;
-  // document.getElementById("tutor2").innerHTML = "";
-  // document.getElementById("tutor3").innerHTML = "";
-  // document.getElementById("tutor4").innerHTML = "";
-
-    
+  const tutordisplay = async () => {
+    firebase.database().ref("/tutorinfo").once("value").then(_users => {
+      _users.forEach(_user => {
+        const user = _user.val();
+        const data = {
+          areas: user.languages,
+          average: user.interests,
+          rating: user.socialmedia,
+          firstname: user.firstname,
+          lastname: user.lastname
+        }
+  
+        document.getElementById("hyunwookiskorean2").innerHTML = `${data.languages}`;
+        document.getElementById("hyunwookiskorean3").innerHTML = `${data.interests}`;
+        document.getElementById("hyunwookiskorean4").innerHTML = `${data.socialmedia}`;
+        document.getElementById("hyunwookiskorean5").innerHTML = `Name: ${data.firstname} ${data.lastname}`;
+  
+      });
+    })
   }
