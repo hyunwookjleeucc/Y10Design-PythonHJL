@@ -70,7 +70,8 @@ function signinwemail() {
     .catch((err) => {
       alert(`${err.code} ${err.message}`);
     });
-    console.log("logged in")
+    console.log("logged in");
+    window.location.href = "dashboard.html"
 }
 
   
@@ -122,11 +123,12 @@ const getUserData = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
-      .signInWithPopup(provider);
+      .signInWithPopup(provider)
+      console.log("logged in")
   }
 
   document.getElementById("testypoopy").addEventListener('click', () => {
-    submit();
+    submit()
   });
 
   function resetinfo() {
@@ -162,33 +164,11 @@ const getUserData = async () => {
     const confirm_password = document.getElementById("passwordr");
   if (password.value != confirm_password.value) {
       confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-
+  } 
+  else {
       confirm_password.setCustomValidity("You're good!");
   }
   }
 
   password.onchange = validatePassword;
   confirm_password.onkeyup = validatePassword;
-
-
-  const tutordisplay = async () => {
-    firebase.database().ref("/tutorinfo").once("value").then(_users => {
-      _users.forEach(_user => {
-        const user = _user.val();
-        const data = {
-          areas: user.languages,
-          average: user.interests,
-          rating: user.socialmedia,
-          firstname: user.firstname,
-          lastname: user.lastname
-        }
-  
-        document.getElementById("hyunwookiskorean2").innerHTML = `${data.languages}`;
-        document.getElementById("hyunwookiskorean3").innerHTML = `${data.interests}`;
-        document.getElementById("hyunwookiskorean4").innerHTML = `${data.socialmedia}`;
-        document.getElementById("hyunwookiskorean5").innerHTML = `Name: ${data.firstname} ${data.lastname}`;
-  
-      });
-    })
-  }

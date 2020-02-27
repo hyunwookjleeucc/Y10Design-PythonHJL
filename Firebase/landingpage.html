@@ -18,7 +18,7 @@
 <ul>
 
   <li><a href="tips.html">HELP</a></li>  
-  <li><a href="search.html">SEARCH FOR A TUTOR</a></li>
+  <li><a href="search.html">FIND A TUTOR</a></li>
   <li><a href="dashboard.html">DASHBOARD</a></li>
   <li><a class="active" href="landingpage.html">HOME</a></li>
   <li><a onclick="logout()">LOGOUT</a></li>
@@ -46,23 +46,23 @@
       <p>Please fill in this form to create an account.</p>
       <hr>
       <label for="email"><b>Email</b></label>
-      <input class="email" type="text" placeholder="Enter Email" name="email" required>
+      <input id="email" type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
       <!-- <input id="password" type="password" placeholder="Enter Password" name="psw" required> -->
 
-      <input type="password" placeholder="Password" class="password" required>
+      <input type="password" placeholder="Password" id="password" required>
         
 
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input id="passwordr" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input id="passwordr" type="password" placeholder="Repeat Password" required>
       <!-- <input type="passwordr" placeholder="Confirm Password" id="passwordr" required> -->
 
       <label>
         <input type="checkbox" checked="false" name="remember" style="margin-bottom:15px"> Remember me
       </label>
 
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <p>By creating an account you agree to our <a href="terms.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
         <button type="submit" class="signup" onclick="validatePassword()">Confirm Password</button>
@@ -75,12 +75,14 @@
 <br>
    <button onclick="signin()" style="text-align: center;">Login with Google</button>
 
-  <input style = "width:70%;" type="text" placeholder="Email..." class="email" name="email" id="emailid" />
-  <input style = "width:70%;" type="password" placeholder="Password..." class="password" id="passwordid" />
+   <p></p>
+
+  <input style = "width:70%;" type="text" placeholder="Email..." name="email" id="emailid" />
+  <input style = "width:70%;" type="password" placeholder="Password..." id="passwordid" />
   
   
 
-  <button style="background-color:darkgoldenrod"type="button" onclick="signinwemail()">Login to Account</button>
+  <button style="background-color:rgb(201, 27, 157)"type="button" onclick="signinwemail()">Login to Account</button>
 
 
 </div>
