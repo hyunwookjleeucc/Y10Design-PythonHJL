@@ -201,11 +201,11 @@ const getUserData = async () => {
     console.log("bruh")
   
   
-    const name = "Eli Preston"
+    const name = "Name: Eli Preston"
     const strengths ="Areas of Strength: World History, Drama, Astrophysics"
-    const average = "99"
-    const email = "eli.preston@ucc.on.ca"
-    const rating ="9.3"
+    const average = "Average: 99"
+    const email = "Email: eli.preston@ucc.on.ca"
+    const rating ="Tutor Rating: 9.3"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
@@ -218,11 +218,11 @@ const getUserData = async () => {
   
   function frandisplay() {
   
-    const name = "Francesco Rende"
+    const name = "Name: Francesco Rende"
     const strengths ="Areas of Strength: Music, French, Writing"
-    const average = "96"
-    const email = "francesco.rende@ucc.on.ca"
-    const rating ="10"
+    const average = "Average: 96"
+    const email = "Email: francesco.rende@ucc.on.ca"
+    const rating ="Tutor Rating: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
@@ -235,11 +235,11 @@ const getUserData = async () => {
   
   function ibdisplay() {
   
-    const name = "Ibhrahim Fadel"
+    const name = "Name: Ibhrahim Fadel"
     const strengths ="Areas of Strength: Coding, French, Physics"
-    const average = "99"
-    const email = "ibrahim.fadel@ucc.on.ca"
-    const rating ="9.9"
+    const average = "Average: 99"
+    const email = "Email: ibrahim.fadel@ucc.on.ca"
+    const rating ="Tutor Rating: 9.9"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
@@ -252,11 +252,11 @@ const getUserData = async () => {
   
   function jleedisplay() {
   
-    const name = "Justin Lee"
+    const name = "Name: Justin Lee"
     const strengths ="Areas of Strength: History, English, Math"
-    const average = "99"
-    const email = "justin.lee22@ucc.on.ca"
-    const rating ="9.8"
+    const average = "Average: 99"
+    const email = "Email: justin.lee22@ucc.on.ca"
+    const rating ="Tutor Rating: 9.8"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
@@ -269,11 +269,11 @@ const getUserData = async () => {
   
   function kalendisplay() {
   
-    const name = "Kalen Janmohamed"
+    const name = "Name: Kalen Janmohamed"
     const strengths ="Areas of Strength: Latin"
     const average = "88"
-    const email = "kalen.janmohamed@ucc.on.ca"
-    const rating ="7.3"
+    const email = "Email: kalen.janmohamed@ucc.on.ca"
+    const rating ="Tutor Rating: 7.3"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
@@ -286,11 +286,11 @@ const getUserData = async () => {
   
   function lukasdisplay() {
   
-    const name = "Lukas Timusk"
+    const name = "Name: Lukas Timusk"
     const strengths ="Areas of Strength: French, Chemistry"
-    const average = "92"
-    const email = "lukas.timusk@ucc.on.ca"
-    const rating ="8.9"
+    const average = "Average: 92"
+    const email = "Email: lukas.timusk@ucc.on.ca"
+    const rating ="Tutor Rating:8.9"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
@@ -303,11 +303,11 @@ const getUserData = async () => {
   
   function stefdisplay() {
   
-    const name = "Stefan Ateljevic"
+    const name = "Name: Stefan Ateljevic"
     const strengths ="Areas of Strength: French, Biology, English"
-    const average = "89"
-    const email = "stefan.ateljevic@ucc.on.ca"
-    const rating ="8.6"
+    const average = "Average: 89"
+    const email = "Email: stefan.ateljevic@ucc.on.ca"
+    const rating ="Tutor Rating: 8.6"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
@@ -320,11 +320,11 @@ const getUserData = async () => {
   
   function vaanandisplay() {
   
-    const name = "Vaanan Murugathas"
+    const name = "Name: Vaanan Murugathas"
     const strengths ="Areas of Strength: Chemistry, Mandarin, Film"
-    const average = "96"
-    const email = "vaanan.murugathas@ucc.on.ca"
-    const rating ="8.4"
+    const average = "Average: 96"
+    const email = "Email: vaanan.murugathas@ucc.on.ca"
+    const rating ="Tutor Rating: 8.4"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
