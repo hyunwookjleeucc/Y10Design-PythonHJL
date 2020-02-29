@@ -71,7 +71,7 @@ function signinwemail() {
       alert(`${err.code} ${err.message}`);
     });
     console.log("logged in");
-    window.location.href = "dashboard.html"
+    // window.location.href = "dashboard.html"
 }
 
   
