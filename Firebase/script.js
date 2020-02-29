@@ -172,3 +172,165 @@ const getUserData = async () => {
 
   password.onchange = validatePassword;
   confirm_password.onkeyup = validatePassword;
+
+
+  // Tutor Search Functions
+  
+  function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+  
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+  
+  function elidisplay() {
+  
+    console.log("bruh")
+  
+  
+    const name = "Eli Preston"
+    const strengths ="Areas of Strength: World History, Drama, Astrophysics"
+    const average = "99"
+    const email = "eli.preston@ucc.on.ca"
+    const rating ="9.3"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+  
+  }
+  
+  function frandisplay() {
+  
+    const name = "Francesco Rende"
+    const strengths ="Areas of Strength: Music, French, Writing"
+    const average = "96"
+    const email = "francesco.rende@ucc.on.ca"
+    const rating ="10"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+    
+  }
+  
+  function ibdisplay() {
+  
+    const name = "Ibhrahim Fadel"
+    const strengths ="Areas of Strength: Coding, French, Physics"
+    const average = "99"
+    const email = "ibrahim.fadel@ucc.on.ca"
+    const rating ="9.9"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+    
+  }
+  
+  function jleedisplay() {
+  
+    const name = "Justin Lee"
+    const strengths ="Areas of Strength: History, English, Math"
+    const average = "99"
+    const email = "justin.lee22@ucc.on.ca"
+    const rating ="9.8"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+    
+  }
+  
+  function kalendisplay() {
+  
+    const name = "Kalen Janmohamed"
+    const strengths ="Areas of Strength: Latin"
+    const average = "88"
+    const email = "kalen.janmohamed@ucc.on.ca"
+    const rating ="7.3"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+    
+  }
+  
+  function lukasdisplay() {
+  
+    const name = "Lukas Timusk"
+    const strengths ="Areas of Strength: French, Chemistry"
+    const average = "92"
+    const email = "lukas.timusk@ucc.on.ca"
+    const rating ="8.9"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+    
+  }
+  
+  function stefdisplay() {
+  
+    const name = "Stefan Ateljevic"
+    const strengths ="Areas of Strength: French, Biology, English"
+    const average = "89"
+    const email = "stefan.ateljevic@ucc.on.ca"
+    const rating ="8.6"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+    
+  }
+  
+  function vaanandisplay() {
+  
+    const name = "Vaanan Murugathas"
+    const strengths ="Areas of Strength: Chemistry, Mandarin, Film"
+    const average = "96"
+    const email = "vaanan.murugathas@ucc.on.ca"
+    const rating ="8.4"
+  
+    document.getElementById("tutorName").innerHTML = name;
+    document.getElementById("tutorStrengths").innerHTML = strengths;
+    document.getElementById("tutorAverage").innerHTML = average;
+    document.getElementById("tutorEmail").innerHTML = email;
+    document.getElementById("tutorRating").innerHTML = rating;
+  
+    
+  }

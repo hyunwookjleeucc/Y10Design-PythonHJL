@@ -7,7 +7,6 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel='icon' href='favicon (1).ico' type='image/x-icon'/ >
-
 </head>
 <body>
 
@@ -25,21 +24,47 @@
 <div class="header">
   <p id="big" style="color:green; margin-top:30px"><b>Find a Tutor</b></p>
 
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for tutors..">
+
+<ul id="myUL">
+  <li><a onclick="elidisplay()">Eli Preston</a></li>
+  <li><a onclick="frandisplay()">Francesco Rende</a></li>
+
+  <li><a onclick="ibdisplay()">Ibrahim Fadel</a></li>
+  <li><a onclick="jleedisplay()">Justin Lee</a></li>
+
+  <li><a onclick="kalendisplay()">Kalen Janmohamed</a></li>
+  <li><a onclick="lukasdisplay()">Lukas Timusk</a></li>
+  <li><a onclick="stefdisplay()">Stefan Atelejevic</a></li>
+  <li><a onclick="vaanandisplay()">Vaanan Murugathas</a></li>
+</ul>
+  <!-- <div class="searchBar">
+    <input id="tutorInput" type="text" placeholder="Search.." name="search">
+    <button type="submit" onclick="search()">Submit</button>
+  </div> -->
+<br>
+  <p id="tutorName" style="color:green"></p>
+  <p id="tutorStrengths" style="font-size:16px; color: red;"></p>
+  <p id="tutorAverage" style="font-size:16px; color: red;"></p>
+  <p id="tutorEmail" style="font-size:16px; color: red;"></p>
+  <p id="tutorRating" style="font-size:16px; color: red;"></p>
+
+  
   
   <div class="row1" style="display: flex; justify-content: center; align-items: center; flex-direction: row; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-    <div class="column1" style="width: 50%;">
-      <p style="color:green">Eli Preston</p>
-      <p style="font-size:16px; color: red;">
-        Areas of Strength: World History, Drama <br>
+    <div class="column1 tutor" style="width: 50%;">
+      <p class="tutorname" style="color:green">Eli Preston</p>
+      <p class="tutorinfo" style="font-size:16px; color: red;">
+        Areas of Strength: World History, Drama, Astrophysics <br>
         Average: 97 <br>
         <a href="mailto:eli.preston@ucc.on.ca">Email: eli.preston@ucc.on.ca</a> <br>
-        Tutor Rating: 8 <br>
+        Tutor Rating: 9.3 <br>
       </p> 
     </div>
 
-    <div class="column2" style="width: 50%;">
-      <p style="color:green">Francesco Rende</p>
-      <p style="font-size:16px; color: red;">
+    <div class="column2 tutor" style="width: 50%;">
+      <p class="tutorname" style="color:green">Francesco Rende</p>
+      <p class="tutorinfo" style="font-size:16px; color: red;">
         Areas of Strength: Music, French, Writing <br>
         Average: 96 <br>
         <a href="mailto:francesco.rende@ucc.on.ca">Email: francesco.rende@ucc.on.ca</a> <br>
@@ -51,19 +76,19 @@
 
 
   <div class="row1" style="display: flex; justify-content: center; align-items: center; flex-direction: row; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-    <div class="column1" style="width: 50%;">
-      <p style="color:green">Ibrahim Fadel</p>
-      <p style="font-size:16px; color: red;">
+    <div class="column1 tutor" style="width: 50%;">
+      <p class="tutorname" style="color:green">Ibrahim Fadel</p>
+      <p class="tutorinfo" style="font-size:16px; color: red;">
         Areas of Strength: Coding, French, Physics <br>
         Average: 99 <br>
-        <a href="mailto:ibrahimi.fadel@ucc.on.ca">Email: ibrahim.fadel@ucc.on.ca</a> <br>
+        <a class="tutorinfo" href="mailto:ibrahimi.fadel@ucc.on.ca">Email: ibrahim.fadel@ucc.on.ca</a> <br>
         Tutor Rating: 9.9 <br>
       </p>
     </div>
 
-    <div class="column2" style="width: 50%;">
-      <p style="color:green">Justin Lee</p>
-      <p style="font-size:16px; color: red;">
+    <div class="column2 tutor" style="width: 50%;">
+      <p class="tutorname" style="color:green">Justin Lee</p>
+      <p class="tutorinfo" style="font-size:16px; color: red;">
         Areas of Strength: History, English, Math <br>
         Average: 99 <br>
         <a href="mailto:justin.lee22@ucc.on.ca">Email: justin.lee22@ucc.on.ca</a> <br>
@@ -74,22 +99,22 @@
   </div>
 
   <div class="row1" style="display: flex; justify-content: center; align-items: center; flex-direction: row; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-    <div class="column1" style="width: 50%;">
-      <p style="color:green">Kalen Janmohamed</p>
-      <p style="font-size:16px; color: red;">
+    <div class="column1 tutor" style="width: 50%;">
+      <p class="tutorname" style="color:green">Kalen Janmohamed</p>
+      <p class="tutorinfo" style="font-size:16px; color: red;">
         Areas of Strength: Latin <br>
         Average: 88 <br>
-        <a href="mailto:kalen.janmohamed@ucc.on.ca">Email: kalen.janmohamed@ucc.on.ca</a> <br>
+        <a class="tutorinfo" href="mailto:kalen.janmohamed@ucc.on.ca">Email: kalen.janmohamed@ucc.on.ca</a> <br>
         Tutor Rating: 7.3 <br>
       </p>
       </div>
 
   <div class="column2" style="width: 50%;">
-    <p style="color:green">Lukas Timusk</p>
-    <p style="font-size:16px; color: red;">
+    <p class="tutorname" style="color:green">Lukas Timusk</p>
+    <p class="tutorinfo" style="font-size:16px; color: red;">
       Areas of Strength: French, Chemistry <br>
       Average: 92 <br>
-      <a href="mailto:lukas.timusk@ucc.on.ca">Email: lukas.timusk@ucc.on.ca</a> <br>
+      <a class="tutorinfo" href="mailto:lukas.timusk@ucc.on.ca">Email: lukas.timusk@ucc.on.ca</a> <br>
       Tutor Rating: 8.9 <br>
     </p>
   </div>
@@ -97,22 +122,22 @@
   </div>
 
   <div class="row1" style="display: flex; justify-content: center; align-items: center; flex-direction: row; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-    <div class="column1" style="width: 50%;">
-      <p style="color:green">Stefan Ateljevic</p>
-      <p style="font-size:16px; color: red;">
+    <div class="column1 tutor" style="width: 50%;">
+      <p class="tutorname" style="color:green">Stefan Ateljevic</p>
+      <p class="tutorinfo" style="font-size:16px; color: red;">
         Areas of Strength: French, Biology, English <br>
         Average: 89 <br>
-        <a href="mailto:stefan.ateljevic@ucc.on.ca">Email: stefan.ateljevic@ucc.on.ca</a> <br>
+        <a class="tutorinfo" href="mailto:stefan.ateljevic@ucc.on.ca">Email: stefan.ateljevic@ucc.on.ca</a> <br>
         Tutor Rating: 8.6 <br>
       </p>
-      </div>
+    </div>
 
-  <div class="column2" style="width: 50%;">
-    <p style="color:green">Vaanan Murugathas</p>
-    <p style="font-size:16px; color: red;">
+  <div class="column2 tutor" style="width: 50%;">
+    <p class="tutorname" style="color:green">Vaanan Murugathas</p>
+    <p class="tutorinfo"  style="font-size:16px; color: red;">
       Areas of Strength: Chemistry, Mandarin, Film <br>
       Average: 96 <br>
-      <a href="mailto:vaanan.murugathass@ucc.on.ca">Email: vaanan.murugathas@ucc.on.ca</a> <br>
+      <a class="tutorinfo" href="mailto:vaanan.murugathass@ucc.on.ca">Email: vaanan.murugathas@ucc.on.ca</a> <br>
       Tutor Rating: 8.4 <br>
     </p>
   </div>
@@ -129,5 +154,6 @@
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
 <script src="script.js"></script>
+
 
 </html>
