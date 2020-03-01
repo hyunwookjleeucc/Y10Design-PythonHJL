@@ -206,12 +206,14 @@ const getUserData = async () => {
     const average = "Average: 99"
     const email = "Email: eli.preston@ucc.on.ca"
     const rating ="Tutor Rating: 9.3"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
   
   }
@@ -223,12 +225,14 @@ const getUserData = async () => {
     const average = "Average: 96"
     const email = "Email: francesco.rende@ucc.on.ca"
     const rating ="Tutor Rating: 10"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
     
   }
@@ -240,12 +244,14 @@ const getUserData = async () => {
     const average = "Average: 99"
     const email = "Email: ibrahim.fadel@ucc.on.ca"
     const rating ="Tutor Rating: 9.9"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
     
   }
@@ -257,12 +263,14 @@ const getUserData = async () => {
     const average = "Average: 99"
     const email = "Email: justin.lee22@ucc.on.ca"
     const rating ="Tutor Rating: 9.8"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
     
   }
@@ -271,15 +279,17 @@ const getUserData = async () => {
   
     const name = "Name: Kalen Janmohamed"
     const strengths ="Areas of Strength: Latin"
-    const average = "88"
+    const average = "Average: 88"
     const email = "Email: kalen.janmohamed@ucc.on.ca"
     const rating ="Tutor Rating: 7.3"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
     
   }
@@ -291,12 +301,14 @@ const getUserData = async () => {
     const average = "Average: 92"
     const email = "Email: lukas.timusk@ucc.on.ca"
     const rating ="Tutor Rating:8.9"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
     
   }
@@ -308,12 +320,14 @@ const getUserData = async () => {
     const average = "Average: 89"
     const email = "Email: stefan.ateljevic@ucc.on.ca"
     const rating ="Tutor Rating: 8.6"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
     
   }
@@ -325,12 +339,14 @@ const getUserData = async () => {
     const average = "Average: 96"
     const email = "Email: vaanan.murugathas@ucc.on.ca"
     const rating ="Tutor Rating: 8.4"
+    const tutoryear = "Year: 10"
   
     document.getElementById("tutorName").innerHTML = name;
     document.getElementById("tutorStrengths").innerHTML = strengths;
     document.getElementById("tutorAverage").innerHTML = average;
     document.getElementById("tutorEmail").innerHTML = email;
     document.getElementById("tutorRating").innerHTML = rating;
+    document.getElementById("tutorYear").innerHTML = tutoryear;
   
     
   }
