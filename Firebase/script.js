@@ -127,9 +127,6 @@ const getUserData = async () => {
       console.log("logged in")
   }
 
-  document.getElementById("testypoopy").addEventListener('click', () => {
-    submit()
-  });
 
   function resetinfo() {
     window.location.href = "personalquestions.html"
@@ -170,11 +167,11 @@ const getUserData = async () => {
   }
   }
 
-  password.onchange = validatePassword;
+  password.onchange = validatePassword; // this means that when the password is changed the website automatically checks the password.
   confirm_password.onkeyup = validatePassword;
 
 
-  // Tutor Search Functions
+  // Tutor Search Functions and search bar with filters
   
   function myFunction() {
     // Declare variables
@@ -184,7 +181,8 @@ const getUserData = async () => {
     ul = document.getElementById("myUL");
     li = ul.getElementsByTagName('li');
   
-    // Loop through all list items, and hide those who don't match the search query
+    // Loop through all list items, and hide those who don't match the search query; i.e: if 'Vaa' is entered,
+    // the search bar would automatically remove the names that do not contain all the letters in the word 'Vaa.'
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
       txtValue = a.textContent || a.innerText;
@@ -196,9 +194,9 @@ const getUserData = async () => {
     }
   }
   
+  // displaying tutor information functions
   function elidisplay() {
   
-    console.log("bruh")
   
   
     const name = "Name: Eli Preston"
