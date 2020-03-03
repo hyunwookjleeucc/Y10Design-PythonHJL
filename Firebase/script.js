@@ -71,7 +71,7 @@ function signinwemail() {
       alert(`${err.code} ${err.message}`);
     });
     console.log("logged in");
-    // window.location.href = "dashboard.html"
+    window.location.href = "dashboard.html"
 }
 
   
@@ -88,8 +88,9 @@ console.log(firebase.auth());
     if (user) {
       userId = user.uid;
         email = user.email;
+        emailid = document.getElementById("emailid").value;
         getUserData();
-    document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email}`;
+    document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email} ${emailid}`;
     } else {
         console.log("not logged in");
       return;
