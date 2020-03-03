@@ -51,10 +51,10 @@
   };
 
 
-// Get the modal
+// Getting the modal
 var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the modal, closes it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -90,7 +90,7 @@ console.log(firebase.auth());
         email = user.email;
         emailid = document.getElementById("emailid").value;
         getUserData();
-    document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email} ${emailid}`;
+    document.getElementById("hyunwookiskorean").innerHTML = `Email: ${email}`; // innerHTML gets input from another field and displays it
     } else {
         console.log("not logged in");
       return;
@@ -102,7 +102,7 @@ const getUserData = async () => {
   firebase.database().ref("/userinfo").once("value").then(_users => {
     _users.forEach(_user => {
       const user = _user.val();
-      const data = {
+      const data = { //setting the data
         languages: user.languages,
         interests: user.interests,
         socialmedia: user.socialmedia,
