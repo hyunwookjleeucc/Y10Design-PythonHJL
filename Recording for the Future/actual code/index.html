@@ -158,7 +158,7 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>United States of America</strong><p>The US has rap, jazz, hip hop, and EDM. It&#39;s like a melting pot.</p>',
+'<strong>United States of America</strong><p>The US has rap, jazz, hip hop, and EDM. Jazz originates from the slaves from Africa, who used a different notation system and different key signature than the traditional western classical music. The reason why the <a href="https://www.youtube.com/watch?v=Gcxv7i02lXc" target="_blank" title="Opens in a new window">blues genre</a> is known as the blues is because the word &#39;blue&#39; suggested something different, almost wrong. THe unconventional notes from the different scales caused the name blues to be given. While the jazz pieces like <a href="https://www.youtube.com/watch?v=mQR0bXO_yI8" target="_blank" title="Opens in a new window">Fly me to the moon</a> are still classics to this day with artists producing covers of them. Furthermore, the US saw the development of hip hop and rap, changing the music game in the world.</p>',
 'icon': 'music'
 },
 'geometry': {
@@ -170,60 +170,12 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>Russia</strong><p>Russia&#39;s national anthem brings joy to people.</p>',
+'<strong>Russia</strong><p>Russia is not simply known for its <a href="https://www.youtube.com/watch?v=U06jlgpMtQs" target="_blank" title="Opens in a new window">national anthem</a>. It has a long history of its traditional music, from comoposers like <a href="https://www.youtube.com/watch?v=zV1qLYukTH8" target="_blank" title="Opens in a new window">Tchaikovsky</a>, <a href="https://www.youtube.com/watch?v=pBx-tr1FDvY" target="_blank" title="Opens in a new window">Rachmaninoff</a>, and <a href="https://www.youtube.com/watch?v=aYAJopwEYv8" target="_blank" title="Opens in a new window">Rimsky-Korsakov</a>. </p>',
 'icon': 'music'
 },
 'geometry': {
 'type': 'Point',
 'coordinates': [105.3188, 61.5240]
-}
-},
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<strong>Great Britain</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
-'icon': 'music'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [-3.4360, 52.3781]
-}
-},
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<strong>Australia</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
-'icon': 'music'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [123.7751, -25.2744]
-}
-},
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<strong>Canada</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
-'icon': 'music'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [-94.3468, 53.1304]
-}
-},
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<strong>Egypt</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
-'icon': 'music'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [30.8025, 24.8206]
 }
 },
 {
@@ -242,19 +194,7 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>Mexico</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
-'icon': 'music'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [-100.5528, 18.6345]
-}
-},
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<strong>Spain</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
+'<strong>Spain</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music </p>',
 'icon': 'music'
 },
 'geometry': {
@@ -286,18 +226,6 @@ map.addSource('places', {
 'coordinates': [138.2529, 36.2048]
 }
 },
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<strong>Ghana</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
-'icon': 'music'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [-1.0232, 8.9465]
-}
-},
 ]
 }
 });
@@ -318,8 +246,7 @@ map.on('click', 'places', function(e) {
 var coordinates = e.features[0].geometry.coordinates.slice();
 var description = e.features[0].properties.description;
  
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
+// Ensure that if the map is zoomed out such that multiple copies of the feature are visible, the popup appears
 // over the copy being pointed to.
 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
@@ -331,7 +258,7 @@ new mapboxgl.Popup()
 .addTo(map);
 });
  
-// Change the cursor to a pointer when the mouse is over the places layer.
+// Change the cursor to a pointer when the mouse is over the places.
 map.on('mouseenter', 'places', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
