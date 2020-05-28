@@ -2,10 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Map Test 1</title>
+<title>MuseMap</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <style>
 	body { margin: 0; padding: 0; }
 	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -19,6 +21,30 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 </style>
 <div id="map"></div>
+<!-- Popup Modal -->
+<div id="popModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+		  <!-- Modal content-->
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <h4 class="modal-title">MuseMap</h4>
+			</div>
+			<div class="modal-body">
+			  <p>Welcome to MuseMap, an interactive online music map!</p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Start exploring</button>
+			</div>
+		  </div>
+	   
+		</div>
+	  </div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+		$(function() {  $("#popModal").modal('show'); });
+		</script>
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoiaGpsZWU1MTkiLCJhIjoiY2s5MGFycGE2MDJjYjNlb2JsMjFoZTFmMCJ9.kjzxzUBCaJuC0zeHnoC0xQ';
 var map = new mapboxgl.Map({
@@ -182,7 +208,7 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>Saudi Arabia</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
+'<strong>Saudi Arabia</strong><p><a href="https://www.youtube.com/watch?v=0SZArprD9pw" target="_blank" title="Opens in a new window">Saudi traditional music</a> is quite limited. However, the migratory lifestyle of the bedouin mitigated against carrying excess baggage, including musical instruments. Simple rhythms, with the beat counted by clapping or striking together everyday implements formed the basis of the music. Instruments like the double-reeded ney or the stringed rababa were sometimes used, after being obtained in cosmopolitan cities such as Jeddah. However, music is considered "sinful" by some Muslims, including Salah Al Budair who is the Imam of the Grand mosque in Medina. This is based in part on certain Ahadith which speak negatively of non-percussion musical instruments and the idea that music and art are distractions from God. Some Muslims also believe it is sinful for songs to make any mention of women and for women to be involved in the composition of music.[1] Particularly in the early days of the current Saudi state, religious authorities were quick to repress music other than the rhythmic percussion that still dominates contemporary Saudi music.</p>',
 'icon': 'music'
 },
 'geometry': {
@@ -194,7 +220,7 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>Spain</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music </p>',
+'<strong>Spain</strong><p>The music of <a href="https://www.youtube.com/watch?v=4G8v7Kl2qI4" target="_blank" title="Opens in a new window">Spain</a> has a long history. It has played an important role in the development of Western music, and has greatly influenced Latin American music. Spanish music is often associated with traditional styles such as flamenco and classical guitar. While these forms of music are common, there are many different traditional musical and dance styles across the regions. For example, music from the north-west regions is heavily reliant on bagpipes, the jota is widespread in the centre and north of the country, and flamenco originated in the south.</p>',
 'icon': 'music'
 },
 'geometry': {
@@ -206,7 +232,7 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>India</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
+'<strong>India</strong><p><a href="https://www.youtube.com/watch?v=XoI_PcOzW4Q" target="_blank" title="Opens in a new window">India&#39;s</a> music includes multiple varieties of classical music, folk music, filmi, Indian rock, and Indian pop. Indian pop and Indian rock are derived from western rock and roll. India&#39;s classical music tradition, including Hindustani music, Bhartiya music and Carnatic, has a history spanning millennia and developed over several areas. Music in India began as an integral part of socio-religious life. Furthermore, India&#39;s music uses a different scale and notation system to the Western style of music and notations. This is why it is almost impossible to play western music on Indian instruments and vice versa as it is impossible to recreate the same sound at the same pitch with these instruments.</p>',
 'icon': 'music'
 },
 'geometry': {
@@ -218,7 +244,7 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>Japan</strong><p><a href="china.com" target="_blank" title="Opens in a new window">China</a> is a country and it has music</p>',
+'<strong>Japan</strong><p><a href="https://www.youtube.com/watch?v=chwADnoFDng" target="_blank" title="Opens in a new window">Japanese</a> traditional music is similar to Korea&#39;s music due to its proximity to it. It uses a variety of instruments, with woodwinds, brass, and strings.</p>',
 'icon': 'music'
 },
 'geometry': {
