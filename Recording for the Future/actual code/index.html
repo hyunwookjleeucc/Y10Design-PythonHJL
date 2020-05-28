@@ -21,7 +21,7 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 </style>
 <div id="map"></div>
-<!-- Popup Modal -->
+<!-- Popup Modal that autoloads upon site load -->
 <div id="popModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 		  <!-- Modal content-->
@@ -31,27 +31,27 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 			  <h4 class="modal-title">MuseMap</h4>
 			</div>
 			<div class="modal-body">
-			  <p>Welcome to MuseMap, an interactive online music map! Click on the music icons to learn more about music in that region! Click on the blue text to hear that region's music as well. Enjoy!</p>
+			  <p>Welcome to <b>MuseMap</b>, an interactive online music map! Click on the music icons to learn more about music in that region! Click on the blue text to hear that region's music as well. Enjoy!</p>
 			</div>
 			<div class="modal-footer">
-			  <button type="button" class="btn btn-default" data-dismiss="modal">Start exploring</button>
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Start exploring</button> <!--instead of having close as the option, chose to have 'start exploring' as the text-->
 			</div>
 		  </div>
 	   
 		</div>
 	  </div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script> <!--code for the modal pop-up-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!--code for the modal pop-up-->
 <script>
 		$(function() {  $("#popModal").modal('show'); });
 		</script>
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoiaGpsZWU1MTkiLCJhIjoiY2s5MGFycGE2MDJjYjNlb2JsMjFoZTFmMCJ9.kjzxzUBCaJuC0zeHnoC0xQ';
+	mapboxgl.accessToken = 'pk.eyJ1IjoiaGpsZWU1MTkiLCJhIjoiY2s5MGFycGE2MDJjYjNlb2JsMjFoZTFmMCJ9.kjzxzUBCaJuC0zeHnoC0xQ'; //access token to access the GPS information and the interactive map
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
-center: [23.105737, 25.759052],
-zoom: 1.5
+center: [23.105737, 25.759052], //determines which point on the map will be on the centre of the screen. The selection process for this was rigorous to include the entire globe in the view of the user
+zoom: 1.78 //the zoom factor of the map, determines how detailed the map is when first accessing the website
 });
  
 map.on('load', function() {
@@ -69,7 +69,7 @@ map.addSource('places', {
 },
 'geometry': {
 'type': 'Point',
-'coordinates': [111.1954, 35.8617]
+'coordinates': [111.1954, 35.8617] //coordinate for the music icon to be put on. The order is in [East, North] instead of the conventional [North, East]. Furthermore, in the case of the coordinates being in terms of south and west, negative sign must be put to change to North and East form.
 }
 },
 {
@@ -255,7 +255,7 @@ map.addSource('places', {
 ]
 }
 });
-// Add a layer showing the places.
+// Add a layer showing the places with the icons
 map.addLayer({
 'id': 'places',
 'type': 'symbol',
@@ -289,7 +289,7 @@ map.on('mouseenter', 'places', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
  
-// Change it back to a pointer when it leaves.
+// Change it back to a pointer when the mouse leaves the icon.
 map.on('mouseleave', 'places', function() {
 map.getCanvas().style.cursor = '';
 });
